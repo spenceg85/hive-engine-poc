@@ -1,11 +1,11 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { NextUIProvider } from '@nextui-org/react'
-import { Layout } from './Layout'
+import { CssBaseline, NextUIProvider } from '@nextui-org/react'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider>
+            {/* {CssBaseline.flush()} */}
   <Component {...pageProps} />
   </NextUIProvider>
   )

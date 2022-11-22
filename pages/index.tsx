@@ -45,8 +45,8 @@ export default function Home() {
         hideIn="xs"
         variant="highlight-rounded"
       >
-        <Navbar.Link href="#">Home</Navbar.Link>
-        <Navbar.Link isActive href="#">
+        <Navbar.Link isActive href="#">Home</Navbar.Link>
+        <Navbar.Link href="#">
           Customers
         </Navbar.Link>
         <Navbar.Link href="#">Pricing</Navbar.Link>
@@ -114,15 +114,15 @@ export default function Home() {
             }}
             isActive={index === 2}
           >
-            {/* <Link
+            <Link
               color="inherit"
-              css={{
-                minWidth: "100%",
-              }}
+              // css={{
+              //   minWidth: "100%",
+              // }}
               href="#"
             >
               {item}
-            </Link> */}
+            </Link>
           </Navbar.CollapseItem>
         ))}
       </Navbar.Collapse>
