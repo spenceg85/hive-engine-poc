@@ -1,14 +1,27 @@
-import { Navbar, Dropdown, Avatar, Text, Button } from '@nextui-org/react'
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
-import { AcmeLogo } from "./AcmeLogo.js"
-import { Layout } from "./Layout.js"
+import { Navbar, Dropdown, Avatar, Text, Button } from '@nextui-org/react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../styles/Home.module.css';
+import { AcmeLogo } from "./AcmeLogo.js";
+import { Layout } from "./Layout.js";
+import Map from "./Map.jsx";
 import { icons } from "./Icons.js";
+import React from 'react';
+import dynamic from 'next/dynamic';
+import {Login} from './Login.js';
 
 
 export default function Home() {
+  const [loggedIn, setLoggedIn] = React.useState(false);
+
+  const MapWithNoSSR = dynamic(() => import("./Map.jsx"), {
+    ssr: false
+  });
+
+  const loginHandler = () => {
+    setLoggedIn(true);
+  }
 
   const collapseItems = [
     "Profile",
@@ -24,6 +37,9 @@ export default function Home() {
   ];
 
   return (
+    <>
+  
+    {loggedIn ? (
     <Layout>
     <Navbar isBordered variant="sticky">
       <Navbar.Toggle showIn="xs" />
@@ -36,12 +52,12 @@ export default function Home() {
       >
         <AcmeLogo />
         <Text b color="inherit" hideIn="xs">
-          ACME
+          HiveEngine
         </Text>
       </Navbar.Brand>
       <Navbar.Content
         enableCursorHighlight
-        activeColor="secondary"
+        activeColor="primary"
         hideIn="xs"
         variant="highlight-rounded"
       >
@@ -67,7 +83,7 @@ export default function Home() {
               <Avatar
                 bordered
                 as="button"
-                color="secondary"
+                color="primary"
                 size="md"
                 src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
               />
@@ -75,7 +91,7 @@ export default function Home() {
           </Navbar.Item>
           <Dropdown.Menu
             aria-label="User menu actions"
-            color="secondary"
+            color="primary"
             onAction={(actionKey) => console.log({ actionKey })}
           >
             <Dropdown.Item key="profile" css={{ height: "$18" }}>
@@ -126,7 +142,13 @@ export default function Home() {
           </Navbar.CollapseItem>
         ))}
       </Navbar.Collapse>
-    </Navbar>
-  </Layout>
+    </Navbar> 
+    <main>
+      <div id="map" style={{height: "100vh", width: "100vw"}}>
+        <MapWithNoSSR />
+      </div>
+    </main>
+  </Layout>) : ( <Login submit={() => loginHandler()}></Login>)}
+  </>
   )
 }

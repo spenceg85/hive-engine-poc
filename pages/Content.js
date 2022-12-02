@@ -1,9 +1,26 @@
 import { Text, Spacer } from "@nextui-org/react"
 import { Box } from "./Box.js"
+// import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+// import "leaflet/dist/leaflet.css";
+// import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+// import "leaflet-defaulticon-compatibility";
+
+const position = [51.505, -0.09]
 
 export const Content = () => (
   <Box css={{px: "$12", mt: "$8", "@xsMax": {px: "$10"}}}>
-    <Text h2>Lorem ipsum dolor sit amet</Text>
+{/* <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
+    <TileLayer
+      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> HiveEngine | Spencer Grier'
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    />
+    <Marker position={position}>
+      <Popup>
+        A pretty CSS3 popup. <br /> Easily customizable.
+      </Popup>
+    </Marker>
+  </MapContainer> */}
+    {/* <Text h2>Lorem ipsum dolor sit amet</Text>
     <Text size="$lg">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
       labore et dolore magna aliqua. Purus gravida quis blandit turpis. Augue neque gravida in
@@ -73,6 +90,6 @@ export const Content = () => (
       dignissim. Erat imperdiet sed euismod nisi. Risus in hendrerit gravida rutrum quisque non
       tellus orci ac.
     </Text>
-    <Spacer y={1} />
+    <Spacer y={1} /> */}
   </Box>
 );
