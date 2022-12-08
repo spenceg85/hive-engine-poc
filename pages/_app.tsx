@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import { CssBaseline, NextUIProvider, createTheme } from '@nextui-org/react'
 // 2. Call `createTheme` and pass your custom values
