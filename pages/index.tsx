@@ -50,10 +50,11 @@ export default function Home() {
           },
         }}
       >
-        <AcmeLogo />
-        <Text b color="inherit" hideIn="xs">
-          HiveEngine
-        </Text>
+        {/* <AcmeLogo /> */}
+        <Image src="/img/hiveLogo.png" width={100} height={60} style={{borderRadius: "5%", marginRight: "12px"}} alt="hive logo"/>
+        {/* <Text b color="inherit" hideIn="xs"> */}
+        <Image src="/img/hiveLogo3.png" width={170} height={40} alt="hive logo words"/>
+        {/* </Text> */}
       </Navbar.Brand>
       <Navbar.Content
         enableCursorHighlight
@@ -144,7 +145,7 @@ export default function Home() {
       </Navbar.Collapse>
     </Navbar> 
     <main>
-      <div id="map" style={{height: "100vh", width: "100vw"}}>
+      <div id="map" style={{height: "92vh", width: "100vw"}}>
         <MapWithNoSSR />
       </div>
     </main>
